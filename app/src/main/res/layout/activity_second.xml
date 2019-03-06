@@ -173,14 +173,15 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
+        android:layout_width="154dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText9"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:srcCompat="?android:attr/colorPressedHighlight" />
+        app:srcCompat="@drawable/colorshapeorange" />
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -319,7 +320,7 @@
         android:layout_height="60dp"
         app:layout_constraintStart_toEndOf="@+id/editText8"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/colorshapered" />
+        app:srcCompat="@drawable/colorshapewhite" />
 
     <TextView
         android:id="@+id/textView11"
