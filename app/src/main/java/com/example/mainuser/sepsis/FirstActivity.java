@@ -23,7 +23,10 @@ public class FirstActivity extends AppCompatActivity {
     Button btn;
     Random rand;
 
-
+    @Override
+    public void onBackPressed(){
+        System.exit(0);
+    }
 
 
     @Override

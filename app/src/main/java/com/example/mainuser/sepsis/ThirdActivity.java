@@ -44,7 +44,7 @@ public class ThirdActivity extends Activity {
         }else if(Integer.parseInt((String)i.getExtras().get("totalScore")) == 3) {
             TextView t = findViewById(R.id.textView10);
             t.setText("Check up on patient in 4 Hours");
-        }else if(Integer.parseInt((String)i.getExtras().get("totalScore"))> 4 && Integer.parseInt((String)i.getExtras().get("totalScore"))>=6) {
+        }else if(Integer.parseInt((String)i.getExtras().get("totalScore"))> 4 && Integer.parseInt((String)i.getExtras().get("totalScore"))<=6) {
             TextView t = findViewById(R.id.textView10);
             t.setText("Check up on patient in 1 Hour");
         }else{
@@ -75,8 +75,12 @@ public class ThirdActivity extends Activity {
             });
     }
 
+    @Override
+    public void onDestroy() {
 
-
+        super.onDestroy();
+        mp.stop();
+    }
 
     public void onSaveInstanceState(Bundle saveInstanceState) {
         saveInstanceState.putInt("seconds", seconds);
@@ -106,7 +110,7 @@ public class ThirdActivity extends Activity {
                 }else if(Integer.parseInt((String)i.getExtras().get("totalScore")) == 3 && hours>=4 && alarm==false) {
                     alarm();
                     alarm=true;
-                }else if(Integer.parseInt((String)i.getExtras().get("totalScore"))> 4 && Integer.parseInt((String)i.getExtras().get("totalScore"))>=6 && hours>=1 && alarm==false) {
+                }else if(Integer.parseInt((String)i.getExtras().get("totalScore"))> 4 && Integer.parseInt((String)i.getExtras().get("totalScore"))<=6 && hours>=1 && alarm==false) {
                     alarm();
                     alarm=true;
                 }
