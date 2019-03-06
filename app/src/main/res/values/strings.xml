@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">sepsis monitor</string>
+    <string name="Second_activity">SecondActivity</string>
+    <string name="Next">btnNext</string>
+    <string name="consciousness_level">consciousnesslevel</string>
+    <string name="Oxygen_saturation">Oxygensaturation</string>
+    <string name="editTexr8">editText8</string>
+
+</resources>
