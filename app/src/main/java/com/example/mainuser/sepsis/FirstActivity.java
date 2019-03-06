@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +20,7 @@ public class FirstActivity extends AppCompatActivity {
     */
     TextView text;
     Button btn;
+    Button addPatient;
     Random rand;
 
     @Override
@@ -33,8 +33,23 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        text= findViewById(R.id.textView);
-        btn= findViewById(R.id.button);
+        text= findViewById(R.id.pNumEdit1);
+        btn= findViewById(R.id.GenBtn1);
+
+        findViewById(R.id.pNameView2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNameEdit2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNumView2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNumEdit2).setVisibility(View.INVISIBLE);
+        findViewById(R.id.genBtn2).setVisibility(View.INVISIBLE);
+
+        findViewById(R.id.pNameView3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNameEdit3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNumView3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pNumEdit3).setVisibility(View.INVISIBLE);
+        findViewById(R.id.genBtn3).setVisibility(View.INVISIBLE);
+
+
+
 
 
 
@@ -51,8 +66,8 @@ public class FirstActivity extends AppCompatActivity {
                                        }
                                    }
                                });
-        Button btn = findViewById(R.id.button2);
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button addPatient = findViewById(R.id.addPatientBtn);
+        addPatient.setOnClickListener(new View.OnClickListener() {
                                    @Override
                                    public void onClick(View v) {
                                        Log.i("App", "sepsis");

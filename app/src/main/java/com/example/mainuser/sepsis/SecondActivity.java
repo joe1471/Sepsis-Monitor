@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -115,27 +116,29 @@ public class SecondActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                int res = Integer.parseInt(Blood.getText().toString());
-                ImageView BloodColor = findViewById(R.id.imageView2);
-                //TextView t2 = findViewById(R.id.textView4);
-                //t2.setText(Integer.toString(res));
+                if(!TextUtils.isEmpty(Blood.getText())) {
+                    int res = Integer.parseInt(Blood.getText().toString());
+                    ImageView BloodColor = findViewById(R.id.imageView2);
+                    //TextView t2 = findViewById(R.id.textView4);
+                    //t2.setText(Integer.toString(res));
 
-                if(res>=90&&res<=120){
-                    BloodColor.setColorFilter(Color.WHITE);
-                    bpScore =0;
-                    updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
-                }else if(res<130&&res>=80){
-                    BloodColor.setColorFilter(Color.YELLOW);
-                    bpScore =1;
-                    updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
-                }else if(res<140&&res>=130){
-                    BloodColor.setColorFilter(Color.rgb(242,109,0));
-                    bpScore=2;
-                    updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
-                }else{
-                    BloodColor.setColorFilter(Color.RED);
-                    bpScore =3;
-                    updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
+                    if (res >= 90 && res <= 120) {
+                        BloodColor.setImageResource(R.drawable.colorshapewhite);
+                        bpScore = 0;
+                        updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
+                    } else if (res < 130 && res >= 80) {
+                        BloodColor.setImageResource(R.drawable.colorshapeyellow);
+                        bpScore = 1;
+                        updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
+                    } else if (res < 140 && res >= 130) {
+                        BloodColor.setImageResource(R.drawable.colorshapeorange);
+                        bpScore = 2;
+                        updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
+                    } else {
+                        BloodColor.setImageResource(R.drawable.colorshapered);
+                        bpScore = 3;
+                        updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
+                    }
                 }
             }
         });
@@ -279,7 +282,7 @@ public class SecondActivity extends AppCompatActivity {
                 //t2.setText(Integer.toString(res));
 
                 if(position==0){
-                    Clevelcolor.setColorFilter(Color.WHITE);
+                    Clevelcolor.setImageResource(R.drawable.colorshapewhite);;
                     cLevel=0;
                     updateScore(o2Score, bpScore, resRate, heartScore, temp, cLevel);
                 }else if(position==1){
